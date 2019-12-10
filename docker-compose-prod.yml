@@ -21,7 +21,7 @@ services:
     depends_on:
       - memcached
       - redis
-    user: ${UID:-0}:${GID:-0}
+    user: ${USER_ID:-0}:${GROUP_ID:-0}
     command: celery -A geotrek worker -c 1
 
   web:
@@ -37,7 +37,7 @@ services:
       - redis
       - screamshotter
       - convertit
-    user: ${UID:-0}:${GID:-0}
+    user: ${USER_ID:-0}:${GROUP_ID:-0}
 
   api:
     image: geotrekce/admin:${GEOTREK_VERSION:-latest}
@@ -50,4 +50,4 @@ services:
     depends_on:
       - memcached
       - redis
-    user: ${UID:-0}:${GID:-0}
+    user: ${USER_ID:-0}:${GROUP_ID:-0}

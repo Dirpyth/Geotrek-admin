@@ -29,7 +29,7 @@ services:
     depends_on:
       - postgres
       - redis
-    user: ${UID:-1000}:${GID:-1000}
+    user: ${USER_ID:-1000}:${GROUP_ID:-1000}
     command: celery -A geotrek worker -c 1
 
   web:
@@ -45,5 +45,5 @@ services:
       - redis
       - screamshotter
       - convertit
-    user: ${UID:-1000}:${GID:-1000}
+    user: ${USER_ID:-1000}:${GROUP_ID:-1000}
     command: ./manage.py runserver 0.0.0.0:8000

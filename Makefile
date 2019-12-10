@@ -35,3 +35,6 @@ load_demo:
 
 css:
 	for f in `find geotrek/ -name '*.scss'`; do node-sass --output-style=expanded $$f -o `dirname $$f`; done
+
+installer:
+	makeself --follow --current install/ install-$(shell cat VERSION).run "Geotrek-admin $(shell cat VERSION) installer" ./install.sh

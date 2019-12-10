@@ -38,3 +38,6 @@ docs/_build/
 
 /.env
 /docker-compose.yml
+/install-*.run
+/install.log
+
